@@ -1,8 +1,16 @@
+
 // DOM for Modal Module 
+
 const DomModalEvent = (() => {
   const btn = document.getElementById("modal-button");
   const modal = document.getElementById("modal");
   const close = document.querySelector(".close");
+
+
+  // window.addEventListener("load", () => {
+  //   modal.style.display = "none";
+  // });
+
 
   btn.addEventListener("click", () => {
     modal.style.display = "block";
@@ -35,7 +43,7 @@ const constraintValidationAPI = (() => {
   const confirmPasswordError = document.querySelector("#confirm-password + span.error-msgs");
 
 
-  email.addEventListener("input", (e) => {
+  email.addEventListener("input", () => {
     // Run check to see if input from user is valid, if so reset class and clear DOM text
     if (email.validity.valid) {
       emailError.textContent = "";
@@ -46,7 +54,7 @@ const constraintValidationAPI = (() => {
   });
 
 
-  zip.addEventListener("input", (e) => {
+  zip.addEventListener("input", () => {
     if (zip.validity.valid) {
       zipError.textContent = "";
       zipError.className = "error-msgs";
@@ -55,7 +63,7 @@ const constraintValidationAPI = (() => {
     }
   });
 
-  password.addEventListener("input", (e) => {
+  password.addEventListener("input", () => {
     if (password.validity.valid) {
       passwordError.textContent = "";
       passwordError.className = "error-msgs";
@@ -64,7 +72,7 @@ const constraintValidationAPI = (() => {
     }    
   });
 
-  confirmPassword.addEventListener("input", (e) => {
+  confirmPassword.addEventListener("input", () => {
     if (confirmPassword.validity.valid) {
       confirmPasswordError.textContent = "";
       confirmPasswordError.className = "error-msgs";
@@ -73,7 +81,7 @@ const constraintValidationAPI = (() => {
     }
   });
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", () => {
     if (!email.validity.valid) {
       showError();
       e.preventDefault();
@@ -179,3 +187,17 @@ const constraintValidationAPI = (() => {
     }
   }
 })();
+
+
+
+
+// const dummyIIFE = (() => {
+//   const dummyDiv = document.getElementById("dummy-div");
+
+//   dummyDiv.textContent = "Hello po idol";
+//   dummyDiv.className = "dummy-styling";
+
+// })();
+
+
+
